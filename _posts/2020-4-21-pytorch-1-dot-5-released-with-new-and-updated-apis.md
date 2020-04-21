@@ -68,7 +68,7 @@ You can try it out in the tutorial [here](https://pytorch.org/tutorials/recipes/
 
 ## Distributed RPC framework APIs (Now Stable)
 
-The Distributed [RPC framework](https://pytorch.org/docs/stable/rpc.html) was launched as experimental in the 1.4 release and the proposal is to mark Distributed RPC framework as stable and no longer experimental. This work involves a lot of enhancements and bug fixes to make the distributed RPC framework more reliable and robust overall, as well as adding a couple of new features, including profiling support, using TorchScript functions in RPC, and several enhancements for ease of use. Below is an overview of the various APIs within the framework:
+The Distributed [RPC framework](https://pytorch.org/docs/stable/rpc/index.html) was launched as experimental in the 1.4 release and the proposal is to mark Distributed RPC framework as stable and no longer experimental. This work involves a lot of enhancements and bug fixes to make the distributed RPC framework more reliable and robust overall, as well as adding a couple of new features, including profiling support, using TorchScript functions in RPC, and several enhancements for ease of use. Below is an overview of the various APIs within the framework:
 
 ### RPC API
 The RPC API allows users to specify functions to run and objects to be instantiated on remote nodes. These functions are transparently recorded so that gradients can backpropagate through remote needs using Distributed Autograd.
@@ -79,7 +79,7 @@ Distributed Autograd connects the autograd graph across several nodes and allows
 ### Distributed Optimizer
 The distributed optimizer creates RRefs to optimizers on each worker with parameters that require gradients, and then uses the RPC API to run the optimizer remotely. The user must collect all remote parameters and wrap them in an `RRef`, as this is required input to the distributed optimizer. The user must also specify the distributed autograd `context_id` so that the optimizer knows in which context to look for gradients.
 
-Learn more about distributed RPC framework APIs [here](https://pytorch.org/docs/stable/rpc.html).
+Learn more about distributed RPC framework APIs [here](https://pytorch.org/docs/stable/rpc/index.html).
 
 ## New High level autograd API (Experimental)
 
